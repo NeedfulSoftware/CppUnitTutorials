@@ -1,0 +1,18 @@
+toolsets = vs2015 vs2013;
+
+vs2015.solutionfile = ../VC14/TestRunner1.sln;
+vs2013.solutionfile = ../VC12/TestRunner1.sln;
+
+setting CPPUNIT_ROOT
+{
+    help = "Path to the CppUnit installation";
+    default = '$(CPPUNIT)';
+}
+
+program TestRunner1
+{
+    sources
+    {
+        ../../Source/main.cpp
+    }
+}
