@@ -11,6 +11,18 @@ setting CPPUNIT_ROOT
 
 program TestRunner1
 {
+    includedirs += $(CPPUNIT_ROOT)/include;
+    libdirs += $(CPPUNIT_ROOT)/lib;
+
+    if ($(config) == Debug)
+    {
+        libs += cppunitd;
+    }
+    if ($(config) == Release)
+    {
+        libs += cppunit;
+    }
+
     sources
     {
         ../../Source/main.cpp
